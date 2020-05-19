@@ -1,0 +1,64 @@
+html {
+    --background-color: white;
+    --text-color: black; 
+    --highlight-color: red;
+    --border-color: black;
+
+    --border-width: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        --background-color: black;
+        --text-color: white; 
+        --highlight-color: #5aa891;
+        --highlight-color: #457D63;
+        --border-color: white;
+    }
+}
+
+body {
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: "Aleo";
+    text-align: center;
+    padding-top: 4em;
+
+    max-width: 45em;
+    margin: auto;
+
+    font-size: 28px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.highlight {
+    background-color: var(--highlight-color);
+    font-weight: bold;
+}
+
+.disabled .chord.highlight {
+    background-color:var(--background-color);
+    font-weight: normal;
+}
+
+.grid {
+    display: grid;
+    /* 4 columns */
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1em;
+}
+.chord {
+    width: 100%;
+}
+.measure {
+    line-height: 3em;
+    display: flex;
+    justify-content: space-evenly;
+}
+.measure {
+    border-left: var(--border-width) solid var(--border-color);
+}
+.measure:nth-child(4n) {
+    border-left: var(--border-width) solid var(--border-color);
+    border-right: var(--border-width) solid var(--border-color);
+}
